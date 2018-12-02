@@ -1,0 +1,17 @@
+<h1>We`re all about cats</h1>
+<%= link_to "Create new post", new_post_path %><br/>
+<% if @posts == []%>
+<p>No Post</p>
+<%= link_to "Create new post", new_post_path %><br/>
+<% else %>
+<% @posts.each do |p| %>
+<p>User <b><%= p.user.email %></b> write:<br/>
+<b><%= p.title %></b><br/>
+<%= p.body %><br/></p>
+<p><%= link_to "Read More", post_path(p.id) %></p>
+<% end %>
+<% end %>
+<%= link_to "About", pages_about_path %><br/>
+<%= link_to "Contact Us", pages_contact_us_path %><br/>
+<%= link_to "Privacy Policy", pages_privacy_policy_path %><br/>
+

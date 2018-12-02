@@ -1,0 +1,8 @@
+<%= @post.user.email %><br/>
+<%= @post.title %><br/>
+<%= @post.body %><br/>
+<hr>
+<% if @post.user_id == current_user.id %>
+<%= link_to "Edit", edit_post_path(@post.id) %><br/>
+<%= link_to "Delete",post_path(@post.id), method: :delete %><br/>
+<% end %>
