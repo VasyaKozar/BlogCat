@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 #Devise gem
 gem 'devise'
-#Active admin gem
+#Active admin gems
 gem 'activeadmin'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
