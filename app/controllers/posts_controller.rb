@@ -7,9 +7,11 @@ class PostsController < ApplicationController
 
   def create
   	@post = current_user.posts.build(post_params)
-  	if @post.save
-  		redirect_to root_path
-  	end
+  	if(@post.save)
+  		redirect_to @post
+    else
+    render 'new' 
+    end
   end
 
   def show
@@ -23,7 +25,7 @@ class PostsController < ApplicationController
   def update
   	@post = Post.find_by(id: params[:id])
   	if @post.update(post_params)
-  		redirect_to root_path
+  		redirect_to @post
   	end
   end
 

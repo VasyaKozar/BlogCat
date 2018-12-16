@@ -1,17 +1,16 @@
-<h1>We`re all about cats</h1>
-<%= link_to "Create new post", new_post_path %><br/>
+<h1>We`re all about cats</h1><%= link_to "Create new post", new_post_path, :class => 'btn btn-outline-primary' %><br/>
+<div class="alert alert-light">
 <% if @posts == []%>
-<p>No Post</p>
-<%= link_to "Create new post", new_post_path %><br/>
+<h2>No Post</h2>
+<%= link_to "Create new post", new_post_path, :class => 'btn btn-outline-primary' %><br/>
 <% else %>
 <% @posts.each do |p| %>
-<p>User <b><%= p.user.email %></b> write:<br/>
-<b><%= p.title %></b><br/>
-<%= p.body %><br/></p>
-<p><%= link_to "Read More", post_path(p.id) %></p>
+<h4>User <b><%= p.user.userparam.firstname %></b> write:<br/></h4>
+<h2><b><%= p.title %></b><br/></h2>
+<h3><%= p.body %><br/></h3>
+<p><%= link_to "Read More", post_path(p.id), :class => 'btn btn-outline-primary' %></p>
 <% end %>
 <% end %>
-<%= link_to "About", pages_about_path %><br/>
-<%= link_to "Contact Us", pages_contact_us_path %><br/>
-<%= link_to "Privacy Policy", pages_privacy_policy_path %><br/>
+</div>
+
 

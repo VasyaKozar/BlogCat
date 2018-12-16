@@ -1,8 +1,28 @@
-<%= @post.user.email %><br/>
-<%= @post.title %><br/>
-<%= @post.body %><br/>
+<n3>User <%= @post.user.userparam.firstname %><br/></n3>
+<h2><b><%= @post.title %></b></h2><br/>
+<h3><%= @post.body %><br/></h3>
 <hr>
 <% if @post.user_id == current_user.id %>
-<%= link_to "Edit", edit_post_path(@post.id) %><br/>
-<%= link_to "Delete",post_path(@post.id), method: :delete %><br/>
+<%= link_to "Edit", edit_post_path(@post.id), :class => 'btn btn-warning' %>
+<%= link_to "Delete",post_path(@post.id), method: :delete, data: {confirm: "You sure?"}, :class => 'btn btn-danger' %><br/>
 <% end %>
+<hr>
+<h2>All Comments</h2>
+<% @post.comments.each do |comment| %>
+<div class="alert alert-light">
+	<p><strong><%= comment.username%></strong>: <%= comment.body %></p>
+	<% if @post.user_id == current_user.id %>
+<%= link_to "Delete", post_comment_path(@post, comment), method: :delete, data: {confirm: "You sure?"}, :class => 'btn btn-danger' %><br/>
+<% end %>
+</div>
+<% end %>
+<hr>
+<h2>Comments</h2>
+  <%= form_for ([@post, @post.comments.build]) do |f| %>
+	<p>User<br>
+	<%= f.text_field :username, {:class => 'form-control'} %><br></p>
+	Comment<br>
+	<%= f.text_area :body, {:class => 'form-control'} %><br>
+	<%= f.submit "Add Comment", {:class => 'btn btn-warning'} %><br>
+<% end %>
+<hr>
