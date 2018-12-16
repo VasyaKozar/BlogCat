@@ -4,24 +4,33 @@
     <title>Blogcat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-    <%= link_to "Back", root_path %> |
-    <% if current_user.userparam.nil? %>
-    <%= link_to "Profile", new_userparam_path %> |
-    <% else %>
-    <%= link_to "Profile", userparam_path(current_user.id) %> |
-    <% end %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-    <%= link_to "Login", new_user_session_path  %>
-    <% end %>
-    <hr>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h2 class="my-0 mr-md-auto font-weight-bold"><%= link_to "Blog Cat", root_path %></h2>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark"><%= link_to "About", pages_about_path %></a>
+        <a class="p-2 text-dark"><%= link_to "Contact Us", pages_contact_us_path %></a>
+        <a class="p-2 text-dark"><%= link_to "Privacy Policy", pages_privacy_policy_path %></a>
+        <% if user_signed_in? %>
+            <% if current_user.userparam.nil? %>
+                <span class="p-2 text-dark"> <%= link_to "Profile", new_userparam_path %></span>
+                <% else %>
+                <span class="p-2 text-dark"> <%= link_to "Profile",  userparam_path(current_user.id) %></span>
+                <% end %>
+                </nav>
+                <span class="btn btn-outline-primary"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></span>
+            <% else %>
+                <span class="btn btn-outline-primary"><%= link_to "Log In", new_userparam_path %></span>
+                
+        <% end %>
+        </div>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
