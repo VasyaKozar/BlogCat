@@ -1,0 +1,16 @@
+<h1>We`re all about cats</h1><%= link_to "Create new post", new_post_path, :class => 'btn btn-outline-primary' %><br/>
+<div class="alert alert-light">
+<% if @posts == []%>
+<h2>No Post</h2>
+<%= link_to "Create new post", new_post_path, :class => 'btn btn-outline-primary' %><br/>
+<% else %>
+<% @posts.each do |p| %>
+<h4>User <b><%= p.user.userparam.firstname %></b> write:<br/></h4>
+<h2><b><%= p.title %></b><br/></h2>
+<h3><%= p.body %><br/></h3>
+<p><%= link_to "Read More", post_path(p.id), :class => 'btn btn-outline-primary' %></p>
+<% end %>
+<% end %>
+</div>
+
+
