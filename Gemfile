@@ -30,8 +30,7 @@ gem 'devise'
 gem 'activeadmin'
 #avatar
 gem "paperclip", "~> 6.0.0"
-#Search
-gem 'ransack'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
