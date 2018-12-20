@@ -1,6 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :set_search
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+
+    def index
+      @q = Post.search(params[:q])
+      @post = @q.result(distinct: true)
+    end
+    def set_search
+  @q = Post.search(params[:q])
+  end
+   
   def new
   	@post = Post.new
   end
@@ -16,6 +26,7 @@ class PostsController < ApplicationController
 
   def show
   	@post = Post.find_by(id: params[:id])
+  
   end
 
   def edit
@@ -39,5 +50,8 @@ class PostsController < ApplicationController
   def post_params
   	params.require(:post).permit(:user_id, :title, :body)
   end
+   def find_post
+    @post = Post.find_by(id: params[:id])
+end
 
 end

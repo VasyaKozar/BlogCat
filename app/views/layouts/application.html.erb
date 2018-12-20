@@ -12,6 +12,10 @@
   <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h2 class="my-0 mr-md-auto font-weight-bold"><%= link_to "Blog Cat", root_path %></h2>
+      <a class="p-2 text-dark"><%= search_form_for @q do |f| %>
+            <%= f.search_field :title_cont %>
+            <%= f.submit %>
+            <% end %></a>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark"><%= link_to "About", pages_about_path %></a>
         <a class="p-2 text-dark"><%= link_to "Contact Us", pages_contact_us_path %></a>
@@ -29,6 +33,7 @@
                 
         <% end %>
         </div>
+   
     <div class="container">
     <%= yield %>
     </div>
