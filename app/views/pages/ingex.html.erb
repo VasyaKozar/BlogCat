@@ -5,11 +5,13 @@
 <%= link_to "Create new post", new_post_path, :class => 'btn btn-outline-primary' %><br/>
 <% else %>
 <% @posts.each do |p| %>
-<h4>User <b><%= p.user.userparam.firstname %></b> write:<br/></h4>
+<%= link_to image_tag(p.user.userparam.avatar.url.to_s, class: "avatar-small ml1", size: "50x50" ), p, class: "fl" %>
 <h2><b><%= p.title %></b><br/></h2>
 <h3><%= p.body %><br/></h3>
 <p><%= link_to "Read More", post_path(p.id), :class => 'btn btn-outline-primary' %></p>
 <% end %>
 <% end %>
 </div>
+
+
 

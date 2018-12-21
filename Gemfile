@@ -30,8 +30,10 @@ gem 'devise'
 gem 'activeadmin'
 #avatar
 gem "paperclip", "~> 6.0.0"
+
 #Search
 gem 'ransack'
+
 
 
 

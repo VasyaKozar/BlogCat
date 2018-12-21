@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
 		after_action :store_location
 		respond_to :text, :html
 		before_action :set_search
-  		after_action :store_location
+
+	
+
+  after_action :store_location
 
 
 def store_location
@@ -13,8 +16,11 @@ end
 def after_sign_in_path_for(resource)
   session[:previous_url] || root_path
 end
-	
+
+
+
 def set_search
 @q = Post.search(params[:q])
 end
+
 end

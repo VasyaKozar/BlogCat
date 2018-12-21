@@ -9,19 +9,11 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact_us'
   get 'pages/privacy_policy'
+  resources :posts
   resources :posts do
-<<<<<<< HEAD
-  
-=======
->>>>>>> 633099324a3f4377ee6202bfd6a61570ad6f8560
     resources :comments
   end
  resources :userparams
 
-<<<<<<< HEAD
- 
-
-=======
->>>>>>> 633099324a3f4377ee6202bfd6a61570ad6f8560
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
