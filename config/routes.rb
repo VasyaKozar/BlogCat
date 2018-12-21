@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact_us'
   get 'pages/privacy_policy'
+  resources :posts
   resources :posts do
     resources :comments
   end

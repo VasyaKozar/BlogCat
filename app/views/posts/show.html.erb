@@ -1,5 +1,7 @@
 <n3>User <%= @post.user.userparam.firstname %><br/></n3>
+<%= link_to image_tag(@post.user.userparam.avatar.url.to_s, class: "avatar-small ml1", size: "50x50" ), p, class: "fl" %>
 <h2><b><%= @post.title %></b></h2><br/>
+<%= link_to image_tag(@post.avatar.url.to_s, class: "avatar-small ml1", size: "100x100" ), p, class: "fl" %><br/>
 <h3><%= @post.body %><br/></h3>
 <hr>
 <% if @post.user_id == current_user.id %>

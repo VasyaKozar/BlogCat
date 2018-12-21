@@ -1,0 +1,11 @@
+<h1>We`re all about cats</h1>
+<table>
+<th> <%= sort_link @q, :title, "loler"%></th>
+    <th> <%= sort_link @q, :body, "Body"%></th>
+     <% @post.each do |p| %>
+  <tr>
+    <td><%= link_to p.title, root_path(p) %></td>
+    <td>$<%= p.body %></td>
+    <% end %>
+</tr>
+    </table>

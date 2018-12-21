@@ -1,21 +1,16 @@
 class PagesController < ApplicationController
 
 	before_action :authenticate_user!
-	before_action :set_search
 
 
    
   def ingex
   	@posts = Post.all
+  	@q = Post.search(params[:q])
+      @post = @q.result(distinct: true)
+      
    end
-   def set_search
-	@q = Post.search(params[:q])
-	end
-
-  def ingex
-  	@posts = Post.all
-  end
-
+  
 
   def about
   end
