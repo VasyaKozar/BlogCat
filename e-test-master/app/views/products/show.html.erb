@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="col-sm-2">	</div>
+  <div class="col-sm-8">
+		<h2 class="prodct">Product</h2>
+			<span style="font-size: 15px;" class="textdekor"></span>
+					<% @product.images.each do |image| %>
+						<span style="font-size: 22px;" class="textdekor">
+							<div class="categorx">
+								<%= image_tag(image.url, size: "150x150", class: "imageproduct") %>
+										<% end %>
+										<i class="textdekor"><%= @product.name %></i>
+										<i class="textdekor">Price: <%= @product.price %></i>
+										<i class="textdekor">Description: <%= @product.description %></i>
+										<i class="textdekor">Count of product: <%= @product.pcount %></i>
+										</div>
+											</span>
+											<%= link_to new_product_post_path(@product.id) do %>
+											<i class="textdekor">Write Comment</i><br/>
+											<% end %>
+											<%= link_to new_product_question_path(@product.id) do %>
+											<i class="textdekor">Write Question </i><br/>
+											<% end %>
+											<%= link_to new_product_order_path(@product.id) do %>
+											<i class="textdekor">Order a product</i><br/>
+											<% end %>
+
+											<div class="commenx">
+												<% @comments.each do |comment| %>
+													<div class="commenx">
+														Comment: <%= comment.body %><br>
+														<%= comment.user.profile.name %>
+													</div>
+												<% end %>
+											</div>
+
+											<div class="questionx">
+												<% @questions.each do |question| %>
+													<div class="questionx">
+															Question: <%= question.body %><br>
+															<%= question.user.profile.name %>
+														</div>
+												<% end %>
+											</div>
+		</div>
+  		<div class="col-sm-2">.col</div>
+</div>

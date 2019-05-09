@@ -1,0 +1,19 @@
+<div class="profile-body-show">
+  <div class="profile-show-views">
+    <%= link_to edit_profile_path(current_user.id), class: 'link-to-profile-edit' do%>
+    <i class="fas fa-edit" style="color: #373D42"></i>
+    <% end %><br />
+    <%= image_tag current_user.profile.avatar_url, class:'photoprofile' %>
+      <div class="profile-info">
+        <h2>
+        <%= label :name,'Name', class: 'form-label'%><%= current_user.profile.name %><br />
+      </h2>
+        <h6>
+        <%= label :phone,'Phone', class: 'form-label'%><%= current_user.profile.phone%><br />
+      </h6>
+        <h6>
+        <%= label :address,'Address', class: 'form-label'%><%= current_user.profile.address %><br />
+      </h6>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="profile-body">
+  <div class="profile-form">
+    <h1>Edit Profile</h1>
+<%= form_for @profile, url: profile_path(current_user.id) do |f| %>
+  <div class="profile-edit-views">
+    <div>
+   <%= f.label :name,'Name', class: 'form-label'%><%= f.text_field :name, class:'profile-field' %><br />
+  </div>
+  <div>
+   <%= f.label :phone, 'Phone', class: 'form-label'%><%= f.text_field :phone, class:'profile-field' %><br />
+  </div>
+  <div>
+   <%= f.label :address, 'Address', class: 'form-label'%><%= f.text_field :address, class:'profile-field' %><br />
+  </div>
+  <div>
+   <%= f.label :avatar, 'Avatar', class: 'form-label'%><%= f.file_field :avatar, class:'avatar-for-profile' %><br />
+  </div>
+    <%= f.submit "Update", class:'button-edit-profile' %>
+</div>
+<% end %>
+</div>
+</div>

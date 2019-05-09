@@ -1,0 +1,29 @@
+  <nav  id="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+
+          <a class="navbar-brand" href="/", style="margin-left: 2em;" >
+            <%= image_tag("ETESTlogo.png", size:"200x35") %>
+              </a>
+                      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                          </ul>
+                            </div>
+  <ul class="nav navbar-nav navbar-right">
+    <article>
+      <% if user_signed_in? %>
+         <%= link_to profile_path(current_user.id), style:'text-decoration: none' do %>
+           <i class="icon-navbar"><%= image_tag current_user.profile.avatar_url, size:"33x33", class: "navbar-image-profile", style:'text-decoration: none' %> </i>
+              <% end %>
+                <%= link_to orders_path, style:'text-decoration: none' do %>
+                  <i class="icon-navbar"><i class="fas fa-shopping-basket fa-2x fa-inverse" style="margin-right: 10px;"></i></i>
+                    <% end %>
+                      <%= link_to destroy_user_session_path, method: :delete, style:'text-decoration: none' do %>
+                        <i class="icon-navbar"><i class="fas fa-sign-out-alt fa-2x fa-inverse" style="margin-right: -10px;"></i></i>
+                          <% end %>
+                            <% else %>
+                              <%= link_to user_session_path, style:'text-decoration: none' do %>
+                                <i class="icon-navbar"><i class="fas fa-sign-in-alt fa-2x fa-inverse"></i></i>
+                                  <% end %>
+			                              <% end %>
+                                  </article>
+                                        </ul>
+                                          </nav>

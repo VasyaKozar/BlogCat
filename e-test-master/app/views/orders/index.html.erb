@@ -1,0 +1,29 @@
+<div class="orders-body">
+	<div>
+		<h2>Shoping Bag</h2>
+<% if @orders == [] %>
+
+	<p> You have no orders <p>
+
+<% else %>
+	<% @orders.each do |order| %>
+	<div class="product-item">
+		<a href="/"><i class="fas fa-times"></i></i></a>
+	  <%= link_to product_path(order.product.id), class: 'link-product' do %>
+		<%= image_tag(order.product.images[0].url, size: "150x150", class: "image-busket-product") %>
+		<h4><%= order.product.name %></h4>
+	<div class="comment-busket">
+		Comment<%= order.comment %>
+		</div>
+		<div class="item-price-busket">
+			Count<%= order.ordercount %>
+			</div>
+		<% end %>
+		</div>
+	<% end %>
+<% end %>
+</div>
+<div class="total-price-basket">
+	<h5>Total</h5>
+</div>
+</div>

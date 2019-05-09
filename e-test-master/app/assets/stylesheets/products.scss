@@ -1,0 +1,37 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.col-sm-2{
+  border-right: 1px solid #E5E5E5 ;
+}
+
+.row{
+ margin-top: 55px;
+}
+.catgr{
+  text-align: center ;
+}
+
+.prodct{
+  display: block;
+  margin: 10px;
+}
+
+.textdekor{
+    color: black;
+}
+
+.textdekor a:link{
+  text-decoration: none;
+}
+
+.commenx{
+  border: 1px solid #E5E5E5;
+}
+
+.questionx{
+  border: 1px solid #E5E5E5;
+}

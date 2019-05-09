@@ -1,0 +1,16 @@
+<div id="showpage">
+<div class="categoriebody">
+    <h2 class="categoriex">All Categories</h2>
+     <% @categories.each do |categorie| %>
+          <div class="catg">
+                    <%= link_to category_path(categorie.id) do %>
+                    <div class="categorcontent">
+          <%= image_tag(categorie.photo_url, size: "180x180", class: "imageallcategory") %>
+            <i class="textdekori"><%= categorie.name %></i>
+              <% end %>
+              </div>
+            </div>
+                  <% end %>
+                    </div>
+                  </div>
+                </div>

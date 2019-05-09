@@ -1,0 +1,6 @@
+<div class="question">
+<%= form_for @question, url: product_questions_path(@product.id) do |f| %>
+  Question: <%= f.text_area :body, size: "30x10" %><br />
+  <%= f.submit "Create" %>
+<% end %>
+</div>

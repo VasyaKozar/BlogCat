@@ -1,0 +1,40 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.productbody{
+  margin-top: 55px;
+}
+
+.productx{
+  display: block;
+  margin: 10px;
+}
+
+.product-body{
+  border: 1px solid #929292;
+  border-radius: 2px;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  margin-left: 1%;
+  margin-bottom: 1%;
+
+  &:hover{
+    box-shadow: 2px 2px 3px #929292;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.product-content{
+  display: inline-block;
+  margin-left: 4.5%;
+  color: black;
+}
+
+.imageallcategory{
+  margin-top: 4%;
+  border-radius: 2%;
+}

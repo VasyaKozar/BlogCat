@@ -1,0 +1,8 @@
+<% @categories.each do |categorie| %>
+     <div class="categorx">
+        <%= link_to category_path(categorie.id) do %>
+          <%= image_tag(categorie.photo_url, size: "30x30", class: "imagecategory") %>
+              <i><%= categorie.name %></i>
+                <% end %>
+                  </div>
+                      <% end %>

@@ -1,0 +1,19 @@
+<div class="productbody">
+		<div class="productx">
+			<h2 class="catgr"><%= @categorie.name%></h2>
+      <span style="font-size: 15px;" class="textdekor"></span>
+
+                    <% @products.each do |prod|%>
+                    <div class="prod">
+                      <%= link_to product_path(prod.id) do %>
+                      <div class="prodcontent">
+                        <%= image_tag(prod.images[0].url, size: "180x180", class: "imageindex") %>
+                    <i class="textprod"><%= prod.name %></i><br/>
+                    <i class="textprod">Price: <%= prod.price %></i><br/>
+                    <i class="textprod">Description: <div class="cutdes"><%= prod.description %></div></i><br/>
+                  </div>
+                  </div>
+                  <% end %>
+                    <% end %><br/>
+                  </span>
+</div>
